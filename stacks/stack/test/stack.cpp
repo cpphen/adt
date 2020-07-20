@@ -2,11 +2,11 @@
 #include <iostream>
 using namespace std;
 
-void Stack<class T>::push(StackNode<T>& n)
+void Stack<class T>::push(StackNode<T>* newNode)
 {
-	if (head == nullptr && node == NULL)
+	if (!head)
 	{
-
+		head = newNode;
 	}
 }
 

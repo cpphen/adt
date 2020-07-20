@@ -16,10 +16,9 @@ private:
 	StackNode *currntPtr = nullptr;
 	int size = 0;
 	bool isEmpty = true;
-	StackNode<T> node;
 public:
-	void push(StackNode<T>&);
+	void push(StackNode<T>*);
 	void pop();
-	StackNode<T> top();
+	StackNode<class T> top();
 	bool isEmpty();
 };
