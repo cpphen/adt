@@ -2,23 +2,21 @@
 using namespace std;
 
 template<class T>
-struct StackNode
-{
-	T val;
-	StackNode *nextNodePtr = nullptr;
-};
+struct StackNode<class T>;
 
 template<class T>
 class Stack
 {
 private:
-	StackNode *head = nullptr;
-	StackNode *currntPtr = nullptr;
-	int size = 0;
-	bool isEmpty = true;
+	StackNode<class T> *head;
+	StackNode<class T> *currntPtr;
+	int stackSize;
+	bool isEmpty;
 public:
-	void push(StackNode<T>*);
+	void push(char);
 	void pop();
-	StackNode<class T> top();
-	bool isEmpty();
+	StackNode<class T>* top();
+	bool empty();
+	int size();
+	Stack();
 };
