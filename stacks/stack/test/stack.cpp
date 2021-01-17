@@ -2,11 +2,28 @@
 #include <iostream>
 using namespace std;
 
-void Stack<class T>::push(StackNode<T>* newNode)
+/* Stack class Node */
+template<class T>
+struct StackNode
+{
+	T val;
+	StackNode *nextNodePtr = nullptr;
+};
+
+
+Stack<class T>::Stack()
+{
+	head = nullptr;
+	currntPtr = nullptr;
+	stackSize = 0;
+	isEmpty = true;
+}
+
+void Stack<class T>::push(char sym)
 {
 	if (!head)
 	{
-		head = newNode;
+		
 	}
 }
 
@@ -15,12 +32,17 @@ void Stack<class T>::pop()
 
 }
 
-StackNode<class T> Stack<class T>::top()
+StackNode<class T>* Stack<class T>::top()
+{
+	return head;
+}
+
+bool Stack<class T>::empty()
 {
 
 }
 
-bool Stack<class T>::isEmpty()
+int Stack<class T>::size()
 {
 
 }
