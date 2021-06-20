@@ -10,8 +10,8 @@ struct StackNode
 	StackNode *nextNodePtr = nullptr;
 };
 
-
-Stack<class T>::Stack()
+template<class T>
+Stack<T>::Stack()
 {
 	head = nullptr;
 	currntPtr = nullptr;
@@ -19,30 +19,68 @@ Stack<class T>::Stack()
 	isEmpty = true;
 }
 
-void Stack<class T>::push(char sym)
+template<class T>
+void Stack<T>::push(T sym)
 {
 	if (!head)
 	{
-		
+		StackNode* node = new StackNode;
+		head = node;
+		//head->val = sym;
+		//head->nextNodePtr = nullptr;
+	}
+	else
+	{
+		StackNode* currntPtr = head;
+		while (currntPtr && currntPtr->nextNodePtr != nullptr) 
+		{
+			if (currntPtr->nextNodePtr == nullptr)
+			{
+				StackNode<T> *newNode;
+				newNode->val = sym;
+				newNode->nextNodePtr = nullptr;
+				currntPtr->nextNodePtr = newNode;
+			}
+			else
+			{
+				currntPtr = currntPtr->nextNodePtr;
+			}
+		}
 	}
 }
 
-void Stack<class T>::pop()
-{
 
+template<class T>
+void Stack<T>::pop()
+{
+	top
 }
 
-StackNode<class T>* Stack<class T>::top()
+template<class T>
+StackNode<T>* Stack<T>::top()
 {
-	return head;
+	StackNode* currntPtr = head;
+	while (currntPtr && currntPtr->nextNodePtr != nullptr)
+	{
+		currntPtr = currntPtr->nextNodePtr;
+		if (currntPtr->nextNodePtr == NULL)
+		{
+			top = currntPtr;
+		}
+	}
+
+	return currntPtr;
 }
 
-bool Stack<class T>::empty()
+template<class T>
+bool Stack<T>::empty()
 {
-
+	head == nullptr;
 }
 
-int Stack<class T>::size()
+
+template<class T>
+int Stack<T>::size()
 {
 
 }
