@@ -10,7 +10,6 @@ struct StackNode
 	StackNode *nextNodePtr = nullptr;
 };
 
-
 template<class T>
 Stack<T>::Stack()
 {
@@ -19,7 +18,6 @@ Stack<T>::Stack()
 	stackSize = 0;
 	isEmpty = true;
 }
-
 
 template<class T>
 void Stack<T>::push(T sym)
@@ -58,7 +56,6 @@ void Stack<T>::pop()
 	top
 }
 
-
 template<class T>
 StackNode<T>* Stack<T>::top()
 {
@@ -74,7 +71,6 @@ StackNode<T>* Stack<T>::top()
 
 	return currntPtr;
 }
-
 
 template<class T>
 bool Stack<T>::empty()
